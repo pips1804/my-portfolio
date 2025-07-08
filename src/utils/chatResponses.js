@@ -2,7 +2,8 @@ export const chatResponses = {
   getResponse(userMessage) {
     const message = userMessage.toLowerCase();
 
-    const match = (keywords) => keywords.some((word) => message.includes(word));
+    const match = (keywords) =>
+      keywords.some((word) => new RegExp(`\\b${word}\\b`, "i").test(message));
 
     // Synonym keyword lists
     const greetings = ["hello", "hi", "hey", "yo", "kumusta", "kamusta"];
