@@ -32,8 +32,8 @@
         <div
           v-for="(job, index) in experiences"
           :key="job.id"
-          class="bg-card text-card-foreground p-6 rounded-lg border border-border hover:shadow-md transition-shadow opacity-0 animate-fade-up"
-          :class="`delay-[${index * 200}ms]`"
+          class="bg-card text-card-foreground p-6 rounded-lg border border-border hover:shadow-lg dark:hover:bg-muted/70 dark:hover:border-muted transition-all opacity-0 animate-fade-up"
+          :style="{ animationDelay: `${index * 100}ms` }"
         >
           <div class="flex justify-between items-start mb-2">
             <h3 class="text-lg font-semibold">{{ job.title }}</h3>

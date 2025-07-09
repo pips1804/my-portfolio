@@ -30,10 +30,10 @@
 
       <div class="grid md:grid-cols-2 gap-6">
         <div
-          v-for="project in projects"
+          v-for="(project, index) in projects"
           :key="project.id"
-          class="bg-card text-card-foreground p-6 rounded-lg border border-border hover:shadow-lg transition-shadow opacity-0 animate-fade-up"
-          :class="`delay-[${index * 200}ms]`"
+          class="bg-card text-card-foreground p-6 rounded-lg border border-border hover:shadow-lg dark:hover:bg-muted/70 dark:hover:border-muted transition-all opacity-0 animate-fade-up"
+          :style="{ animationDelay: `${index * 100}ms` }"
         >
           <h3 class="text-lg font-semibold mb-2">{{ project.title }}</h3>
           <p class="text-muted-foreground text-sm mb-3">
@@ -66,7 +66,9 @@
           </div>
         </div>
       </div>
+    </section>
 
+    <teleport to="body">
       <!-- Modal -->
       <Transition name="fade-modal" appear>
         <div
@@ -89,7 +91,7 @@
           </div>
         </div>
       </Transition>
-    </section>
+    </teleport>
   </div>
 </template>
 

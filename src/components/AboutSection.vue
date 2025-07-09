@@ -8,35 +8,23 @@
     </h2>
 
     <div
-      class="bg-card text-card-foreground p-4 sm:p-6 rounded-lg border border-border hover:shadow-lg transition-shadow text-sm sm:text-base md:text-md leading-relaxed"
+      class="bg-card text-card-foreground p-4 sm:p-6 rounded-lg border border-border hover:shadow-lg dark:hover:bg-muted/70 dark:hover:border-muted transition-all text-sm sm:text-base md:text-md leading-relaxed"
     >
       <p class="mb-4">
-        I am a 21-year-old aspiring developer currently pursuing a Bachelor of
-        Science in Information Technology at Pambayang Dalubhasaan ng Marilao.
-        My academic journey has equipped me with a solid foundation in
-        programming, web development, and various IT concepts that fuel my
-        passion for building interactive and meaningful digital solutions.
-        Through hands-on projects and continuous learning, I’ve developed a
-        strong interest in front-end development and UI/UX design, aiming to
-        create user-friendly applications that offer both functionality and
-        aesthetic value.
+        I'm a 21-year-old IT student at Pambayang Dalubhasaan ng Marilao. I have
+        a strong foundation in programming and web development, which sparked my
+        interest in creating interactive and meaningful digital experiences.
       </p>
       <p class="mb-4">
-        As a student, I actively seek opportunities to grow both technically and
-        creatively. I enjoy exploring new technologies and staying updated with
-        the latest trends in the IT industry. Whether it’s working on school
-        projects, developing personal applications, or contributing to
-        collaborative efforts, I strive to apply my skills in real-world
-        scenarios. My goal is to become a versatile IT professional capable of
-        solving problems, building scalable applications, and making a positive
-        impact through technology.
+        I'm especially drawn to front-end development and UI/UX design. I enjoy
+        building user-friendly applications that balance function and
+        aesthetics, and I’m always looking for ways to improve through hands-on
+        projects and continuous learning.
       </p>
       <p>
-        Lately, I've been diving deeper into the world of artificial
-        intelligence, focusing on integrating AI tools and techniques into
-        modern applications. My work now includes developing AI-powered
-        solutions and leveraging generative AI to optimize development
-        workflows.
+        Lately, I’ve been exploring artificial intelligence—using generative
+        tools and AI techniques to enhance my development process and create
+        smarter, more adaptive solutions.
       </p>
     </div>
   </section>

@@ -29,8 +29,8 @@
       </h1>
 
       <div
-        class="space-y-6 bg-card text-card-foreground p-6 rounded-lg border border-border hover:shadow-md transition-shadow opacity-0 animate-fade-up mb-4"
-        :class="`delay-[${1 * 200}ms]`"
+        class="space-y-6 bg-card text-card-foreground p-6 rounded-lg border border-border hover:shadow-lg dark:hover:bg-muted/70 dark:hover:border-muted transition-all opacity-0 animate-fade-up mb-4"
+        style="animation-delay: 100ms"
       >
         <div>
           <h3 class="text-lg font-semibold mb-3">Frontend</h3>
@@ -47,8 +47,8 @@
       </div>
 
       <div
-        class="space-y-6 bg-card text-card-foreground p-6 rounded-lg border border-border hover:shadow-md transition-shadow opacity-0 animate-fade-up mb-4"
-        :class="`delay-[${1 * 400}ms]`"
+        class="space-y-6 bg-card text-card-foreground p-6 rounded-lg border border-border hover:shadow-lg dark:hover:bg-muted/70 dark:hover:border-muted transition-all opacity-0 animate-fade-up mb-4"
+        style="animation-delay: 200ms"
       >
         <div>
           <h3 class="text-lg font-semibold mb-3">Backend</h3>
@@ -65,8 +65,8 @@
       </div>
 
       <div
-        class="space-y-6 bg-card text-card-foreground p-6 rounded-lg border border-border hover:shadow-md transition-shadow opacity-0 animate-fade-up mb-4"
-        :class="`delay-[${1 * 600}ms]`"
+        class="space-y-6 bg-card text-card-foreground p-6 rounded-lg border border-border hover:shadow-lg dark:hover:bg-muted/70 dark:hover:border-muted transition-all opacity-0 animate-fade-up mb-4"
+        style="animation-delay: 300ms"
       >
         <div>
           <h3 class="text-lg font-semibold mb-3">Artificial Intelligence</h3>
@@ -83,8 +83,8 @@
       </div>
 
       <div
-        class="space-y-6 bg-card text-card-foreground p-6 rounded-lg border border-border hover:shadow-md transition-shadow opacity-0 animate-fade-up mb-4"
-        :class="`delay-[${1 * 800}ms]`"
+        class="space-y-6 bg-card text-card-foreground p-6 rounded-lg border border-border hover:shadow-lg dark:hover:bg-muted/70 dark:hover:border-muted transition-all opacity-0 animate-fade-up mb-4"
+        style="animation-delay: 400ms"
       >
         <div>
           <h3 class="text-lg font-semibold mb-3">Dev Tools</h3>

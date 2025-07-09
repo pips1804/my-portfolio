@@ -13,7 +13,7 @@
       <!-- Info -->
       <div class="flex-1 min-w-[200px] max-w-[calc(100%-7rem)]">
         <!-- Name + Toggle -->
-        <div class="flex items-center justify-between gap-3 mb-1">
+        <div class="flex items-center justify-between gap-3 mb-2">
           <div class="flex items-center gap-2 min-w-0">
             <h1
               class="text-lg sm:text-xl md:text-3xl font-bold font-mono truncate"
@@ -53,15 +53,13 @@
         </div>
 
         <!-- Location -->
-        <div class="flex items-center gap-2 mb-2">
+        <div class="flex items-center gap-2 mb-1">
           <MapPin class="h-4 w-4" />
-          <span class="text-sm md:text-base">Bulacan, Philippines</span>
+          <span class="text-xs md:text-base">Bulacan, Philippines</span>
         </div>
 
         <!-- Role -->
-        <p class="text-sm sm:text-base md:text-lg mb-2">
-          Information Technology Student
-        </p>
+        <p class="text-xs md:text-base mb-4">Information Technology Student</p>
 
         <!-- Email Button -->
         <div class="flex gap-3">
@@ -164,6 +162,9 @@ import {
   ShieldCheck,
   Sun,
   Moon,
+  WorkflowIcon,
+  Briefcase,
+  StickyNoteIcon,
 } from "lucide-vue-next";
 
 import { CheckBadgeIcon } from "@heroicons/vue/20/solid";

@@ -15,7 +15,7 @@
         <div
           v-for="project in visibleProjects"
           :key="project.id"
-          class="bg-card text-card-foreground p-4 rounded-lg border border-border hover:shadow-lg transition-shadow"
+          class="bg-card text-card-foreground p-4 rounded-lg border border-border hover:shadow-lg dark:hover:bg-muted/70 dark:hover:border-muted transition-all"
         >
           <h3 class="text-md font-semibold mb-2">{{ project.title }}</h3>
           <div class="flex flex-wrap gap-2 mb-2">
@@ -49,27 +49,29 @@
   </section>
 
   <!-- Modal -->
-  <Transition name="fade-modal" appear>
-    <div
-      v-if="showModal"
-      class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
-    >
+  <teleport to="body">
+    <Transition name="fade-modal" appear>
       <div
-        class="bg-card text-card-foreground p-6 rounded-lg shadow-lg w-80 text-center transform transition-all duration-300 scale-95 hover:scale-100"
+        v-if="showModal"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
       >
-        <h3 class="text-lg font-semibold mb-2">Not Available</h3>
-        <p class="text-sm text-muted-foreground mb-4">
-          This project does not have a live demo or code link attached.
-        </p>
-        <button
-          @click="showModal = false"
-          class="px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90 transition"
+        <div
+          class="bg-card text-card-foreground p-6 rounded-lg shadow-lg w-80 text-center transform transition-all duration-300 scale-95 hover:scale-100"
         >
-          Close
-        </button>
+          <h3 class="text-lg font-semibold mb-2">Not Available</h3>
+          <p class="text-sm text-muted-foreground mb-4">
+            This project does not have a live demo or code link attached.
+          </p>
+          <button
+            @click="showModal = false"
+            class="px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90 transition"
+          >
+            Close
+          </button>
+        </div>
       </div>
-    </div>
-  </Transition>
+    </Transition>
+  </teleport>
 </template>
 
 <script setup>

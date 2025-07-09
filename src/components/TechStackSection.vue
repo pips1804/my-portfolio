@@ -12,15 +12,17 @@
     </div>
 
     <div
-      class="space-y-6 bg-card text-card-foreground p-6 rounded-lg border border-border hover:shadow-md transition-shadow"
+      class="space-y-6 bg-card text-card-foreground p-6 rounded-lg border border-border hover:shadow-lg dark:hover:bg-muted/70 dark:hover:border-muted transition-all"
     >
       <div>
-        <h3 class="text-lg font-semibold mb-3">Frontend</h3>
+        <h3 class="text-base sm:text-lg md:text-xl font-semibold mb-3">
+          Frontend
+        </h3>
         <div class="flex flex-wrap gap-2">
           <span
             v-for="tech in frontendTech"
             :key="tech"
-            class="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm hover:bg-secondary/80 transition-colors"
+            class="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-xs sm:text-sm md:text-md hover:bg-secondary/80 transition-colors"
           >
             {{ tech }}
           </span>
@@ -28,12 +30,14 @@
       </div>
 
       <div>
-        <h3 class="text-lg font-semibold mb-3">Backend</h3>
+        <h3 class="text-base sm:text-lg md:text-xl font-semibold mb-3">
+          Backend
+        </h3>
         <div class="flex flex-wrap gap-2">
           <span
             v-for="tech in backendTech"
             :key="tech"
-            class="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm hover:bg-secondary/80 transition-colors"
+            class="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-xs sm:text-sm md:text-md hover:bg-secondary/80 transition-colors"
           >
             {{ tech }}
           </span>

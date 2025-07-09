@@ -1,11 +1,11 @@
 <template>
-  <section class="mb-12">
+  <section class="">
     <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
       <Users class="h-6 w-6" />
       Connect
     </h2>
     <div
-      class="bg-card text-card-foreground p-6 rounded-lg border border-border hover:shadow-lg transition-shadow"
+      class="bg-card text-card-foreground p-6 rounded-lg border border-border hover:shadow-lg dark:hover:bg-muted/70 dark:hover:border-muted transition-all text-sm sm:text-base md:text-md"
     >
       <p class="mb-4">
         Let's connect and discuss opportunities, collaborations, or just chat

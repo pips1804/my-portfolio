@@ -5,7 +5,7 @@
       Beyond Coding
     </h2>
     <div
-      class="bg-card text-card-foreground p-6 rounded-lg border border-border hover:shadow-lg transition-shadow"
+      class="bg-card text-card-foreground p-6 rounded-lg border border-border hover:shadow-lg dark:hover:bg-muted/70 dark:hover:border-muted transition-all text-sm sm:text-base md:text-md"
     >
       <p class="mb-4">
         When I'm not writing code, I enjoy staying at home, playing video games,
@@ -13,22 +13,22 @@
         hobbies help me relax, recharge, and stay inspired while balancing my
         passion for technology.
       </p>
-      <div class="grid md:grid-cols-2 gap-4">
+      <div class="grid grid-cols-2 sm:grid-cols-2 gap-4">
         <div class="flex items-center gap-3">
           <Gamepad class="h-5 w-5 text-primary" />
-          <span>Gamer</span>
+          <span class="text-sm sm:text-base">Gamer</span>
         </div>
         <div class="flex items-center gap-3">
           <HomeIcon class="h-5 w-5 text-primary" />
-          <span>Homebody</span>
+          <span class="text-sm sm:text-base">Homebody</span>
         </div>
         <div class="flex items-center gap-3">
           <Users class="h-5 w-5 text-primary" />
-          <span>Watching</span>
+          <span class="text-sm sm:text-base">Watching</span>
         </div>
         <div class="flex items-center gap-3">
           <Headphones class="h-5 w-5 text-primary" />
-          <span>Listening</span>
+          <span class="text-sm sm:text-base">Listening</span>
         </div>
       </div>
     </div>

@@ -20,13 +20,19 @@
         <div
           v-for="job in visibleExperience"
           :key="job.id"
-          class="bg-card text-card-foreground p-6 rounded-lg border border-border hover:shadow-md transition-shadow"
+          class="bg-card text-card-foreground p-6 rounded-lg border border-border hover:shadow-lg dark:hover:bg-muted/70 dark:hover:border-muted transition-all"
         >
           <div class="flex justify-between items-start mb-2">
-            <h3 class="text-lg font-semibold">{{ job.title }}</h3>
-            <span class="text-sm text-muted-foreground">{{ job.period }}</span>
+            <h3 class="text-sm sm:text-lg md:text-xl font-semibold mb-1">
+              {{ job.title }}
+            </h3>
+            <span class="text-xs sm:text-sm text-muted-foreground">
+              {{ job.period }}
+            </span>
           </div>
-          <p class="text-muted-foreground mb-2">{{ job.company }}</p>
+          <p class="text-sm sm:text-md text-muted-foreground mb-2">
+            {{ job.company }}
+          </p>
         </div>
       </TransitionGroup>
     </div>
