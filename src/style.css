@@ -17,6 +17,8 @@
     --border: 0 0% 90%;
     --input: 0 0% 90%;
     --ring: 0 0% 10%;
+    --bubble-user: 220, 90%, 56%;
+    --bubble-bot: 220, 14%, 96%;
   }
 
   .dark {
@@ -33,5 +35,7 @@
     --border: 0 0% 20%;
     --input: 0 0% 25%;
     --ring: 0 0% 100%;
+    --bubble-user: 220, 90%, 70%;
+    --bubble-bot: 220, 14%, 20%;
   }
 }

@@ -1,11 +1,40 @@
+import { GoogleGenerativeAI } from "@google/generative-ai";
+
+const genAI = new GoogleGenerativeAI("AIzaSyAdOGfFqSgvR6nJX_oiaYj261P4c9t2ccg");
+const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+
+// Full bio info based on your manual setup
+const userInfo = `
+Jhon Paul is a passionate IT student in his 4th year at Pambayang Dalubhasaan ng Marilao, Philippines.
+He has built a wide range of projects, including an e-learning Android app in Unity, a BINI-inspired fan website,
+a chatbot using Vue.js and Gemini API, and a sales/inventory system using PHP and MySQL.
+
+His capstone is an interactive science e-learning app for Grade 7.
+
+He works with technologies such as Vue.js, Tailwind CSS, HTML, CSS, Bootstrap, PHP, Python, C#, Dart, Unity,
+Vuforia, Flutter, Flask, and MySQL. He’s experienced in both frontend and backend development,
+mobile and web apps, and real-time systems.
+
+Tools he uses include VS Code, Android Studio, Unity Editor, GitHub, and Figma.
+
+Jhon Paul is known for being calm, focused, responsible, and a fast learner. He enjoys working independently or with a team.
+
+He’s taken various courses and certifications to improve his skills in web dev, mobile apps, and UI/UX.
+
+He enjoys staying home, playing games, watching films and K-dramas, and listening to music.
+
+He’s based in Bulacan and open to both remote and local opportunities.
+
+His girlfriend is Arah Grace, who he loves for being beautiful, smart, kind, and inspiring.
+`;
+
 export const chatResponses = {
-  getResponse(userMessage) {
+  async getResponse(userMessage) {
     const message = userMessage.toLowerCase();
 
     const match = (keywords) =>
       keywords.some((word) => new RegExp(`\\b${word}\\b`, "i").test(message));
 
-    // Synonym keyword lists
     const greetings = ["hello", "hi", "hey", "yo", "kumusta", "kamusta"];
     const experience = [
       "experience",
@@ -153,76 +182,33 @@ export const chatResponses = {
       "bebe",
     ];
 
-    // Matching logic
+    // Handle manually if greeting or girlfriend
     if (match(greetings)) {
       return "Hello! I'm here to help you learn more about Jhon Paul. What would you like to know about his skills, education, or projects?";
-    }
-
-    if (match(experience)) {
-      return "Jhon Paul is a passionate IT student with hands-on experience in building websites, mobile apps, and smart systems. His portfolio includes both academic and personal projects, such as an AR zombie shooting game and a POS-integrated Flutter app.";
-    }
-
-    if (match(skills)) {
-      return "Jhon Paul's tech stack includes Vue.js, Bootstrap, HTML, CSS for frontend, and PHP, Python, and C# for backend development. He also works with Unity, Vuforia, and Flask for cross-platform and interactive apps.";
-    }
-
-    if (match(languages)) {
-      return "Jhon Paul codes in multiple languages including HTML, CSS, JavaScript, PHP, Python, C#, and Dart. He adapts to different tech stacks based on project requirements.";
-    }
-
-    if (match(projects)) {
-      return "Jhon Paul has created a variety of projects such as an e-learning mobile app built with Unity, a BINI-inspired fan website, a chatbot using Vue and Gemini API, and a sales/inventory system for a clothing shop using PHP and MySQL.";
-    }
-
-    if (match(capstone)) {
-      return "His capstone project is an e-learning application for Android, built using Unity. It aims to make science learning more interactive and engaging for Grade 7 students.";
-    }
-
-    if (match(mobile)) {
-      return "Jhon Paul has built mobile applications using Flutter, Unity, and Vuforia. One project connects to a web-based POS system using Flask API for real-time inventory and transaction management.";
-    }
-
-    if (match(tools)) {
-      return "His favorite tools include Visual Studio Code, Unity Editor, Android Studio, GitHub, and Figma. He enjoys clean UI design and efficient development workflows.";
-    }
-
-    if (match(goals)) {
-      return "Jhon Paul aims to become a well-rounded software developer, focusing on creating meaningful digital experiences through mobile apps, web platforms, and smart systems.";
-    }
-
-    if (match(certification)) {
-      return "He has taken several online courses on web development, mobile app development, and UI/UX design. He believes in continuous self-learning to stay ahead in tech.";
-    }
-
-    if (match(personality)) {
-      return "Jhon Paul is a calm, focused, and responsible individual. He’s a fast learner who enjoys solving problems, working independently, and collaborating on team-based projects.";
-    }
-
-    if (match(contact)) {
-      return "You can reach Jhon Paul via the contact section in his portfolio. He’s open to freelance work, internships, and collaborative tech opportunities.";
-    }
-
-    if (match(ai)) {
-      return "Jhon Paul has explored AI integration by creating a chatbot using Vue.js and the Gemini API. He’s interested in how AI can improve learning and user experience.";
-    }
-
-    if (match(education)) {
-      return "Jhon Paul is a 4th-year Bachelor of Science in Information Technology student at Pambayang Dalubhasaan ng Marilao, where he’s gained strong foundations in software development.";
-    }
-
-    if (match(location)) {
-      return "Jhon Paul is based in the Philippines and currently studying in Bulacan. He’s open to both remote and local opportunities.";
-    }
-
-    if (match(hobbies)) {
-      return "Outside of coding, Jhon Paul enjoys staying at home, playing video games, watching films and K-dramas, and listening to music.";
     }
 
     if (match(girlfriend)) {
       return "His girlfriend is Arah Grace. What he loves most about her is that she’s cute, beautiful, and smart. She’s also kind, understanding, supportive, thoughtful, and always inspires him to be a better person.";
     }
 
-    // Default
-    return "That's a great question! I can tell you more about Jhon Paul's skills, projects, studies, or interests. What would you like to explore?";
+    // Build a prompt if message fits any keyword group
+    const prompt = `
+You are Jhon Paul, a 4th-year IT student from Bulacan. Here's your profile:
+
+${userInfo}
+
+Now, answer the following message **as yourself** in a personal, first-person, friendly tone:
+"${userMessage}"
+
+Keep your answer short and natural — like you're chatting with a visitor to your portfolio.
+`;
+
+    try {
+      const result = await model.generateContent(prompt);
+      return await result.response.text();
+    } catch (e) {
+      // Fallback default response
+      return "That's a great question! I can tell you more about Jhon Paul's skills, projects, studies, or interests. What would you like to explore?";
+    }
   },
 };
