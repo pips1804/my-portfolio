@@ -5,27 +5,20 @@
         <FolderOpen class="h-6 w-6" />
         Recent Projects
       </h2>
-      <button
-        v-if="projects.length > 4"
-        @click="showAll = !showAll"
-        class="text-primary hover:underline text-sm"
-      >
-        {{ showAll ? "Show Less" : "View All" }}
-      </button>
+      <router-link to="/projects" class="text-primary hover:underline text-sm">
+        View All
+      </router-link>
     </div>
 
     <div>
-      <TransitionGroup name="fade" tag="div" class="grid md:grid-cols-2 gap-6">
+      <TransitionGroup name="fade" tag="div" class="grid md:grid-cols-1 gap-4">
         <div
           v-for="project in visibleProjects"
           :key="project.id"
-          class="bg-card text-card-foreground p-6 rounded-lg border border-border hover:shadow-lg transition-shadow"
+          class="bg-card text-card-foreground p-4 rounded-lg border border-border hover:shadow-lg transition-shadow"
         >
-          <h3 class="text-lg font-semibold mb-2">{{ project.title }}</h3>
-          <p class="text-muted-foreground text-sm mb-3">
-            {{ project.description }}
-          </p>
-          <div class="flex flex-wrap gap-2 mb-3">
+          <h3 class="text-md font-semibold mb-2">{{ project.title }}</h3>
+          <div class="flex flex-wrap gap-2 mb-2">
             <span
               v-for="tech in project.technologies"
               :key="tech"
@@ -91,8 +84,6 @@ const projects = ref([
   {
     id: 1,
     title: "Amazon Clone",
-    description:
-      "A fully working Amazon clone website built using HTML, CSS, and JavaScript.",
     technologies: ["Javascript", "HTML", "CSS"],
     demoUrl: "#",
     codeUrl: "#",
@@ -109,36 +100,7 @@ const projects = ref([
   {
     id: 3,
     title: "AI Chat Bot",
-    description:
-      "AI chatbot built with Vue.js and Bootstrap, integrated with the Gemini API for real-time conversational responses.",
     technologies: ["Vue.js", "Bootstrap", "Gemini API"],
-    demoUrl: "#",
-    codeUrl: "#",
-  },
-  {
-    id: 4,
-    title: "Portfolio Website",
-    description:
-      "Responsive portfolio with dark mode, animations, and chat functionality",
-    technologies: ["Vue.js", "Tailwind CSS"],
-    demoUrl: "#",
-    codeUrl: "#",
-  },
-  {
-    id: 5,
-    title: "ThinkSci",
-    description:
-      "Our capstone project is an e-learning application for Android, built using Unity.",
-    technologies: ["Unity", "C#"],
-    demoUrl: "#",
-    codeUrl: "#",
-  },
-  {
-    id: 6,
-    title: "s2diopeepz",
-    description:
-      "A simple photo booth web app using HTML, CSS, and JavaScript with snapshot and filter features.",
-    technologies: ["HTML", "CSS", "JavaScript"],
     demoUrl: "#",
     codeUrl: "#",
   },

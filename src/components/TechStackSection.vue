@@ -5,6 +5,10 @@
         <Code class="h-6 w-6" />
         Tech Stack
       </h2>
+
+      <router-link to="/techstack" class="text-primary hover:underline text-sm">
+        View All
+      </router-link>
     </div>
 
     <div
@@ -52,5 +56,5 @@ const frontendTech = ref([
   "Vue.js",
 ]);
 
-const backendTech = ref(["Python", "C#", "PHP"]);
+const backendTech = ref(["Python", "C#", "PHP", "MySQL", "SQLite", "Firebase"]);
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <section class="mb-12">
+  <section class="mb-6">
     <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
       <Heart class="h-6 w-6" />
       Beyond Coding
