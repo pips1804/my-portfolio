@@ -4,6 +4,12 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Inter", "sans-serif"], // override default sans
+        // optionally add more
+        heading: ["Poppins", "sans-serif"],
+        mono: ["Work Sans", "monospace"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -26,14 +32,23 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        boxShadow: {
-          "custom-light": "0 4px 12px rgba(0, 0, 0, 0.1)",
-          "custom-dark": "0 4px 12px rgba(255, 255, 255, 0.1)",
-        },
         bubble: {
           user: "hsl(var(--bubble-user))",
           bot: "hsl(var(--bubble-bot))",
         },
+      },
+      boxShadow: {
+        "custom-light": "0 4px 12px rgba(0, 0, 0, 0.1)",
+        "custom-dark": "0 4px 12px rgba(255, 255, 255, 0.1)",
+      },
+      keyframes: {
+        "fade-up": {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+      },
+      animation: {
+        "fade-up": "fade-up 0.8s ease-out forwards",
       },
     },
   },

@@ -3,7 +3,7 @@
     class="border-b border-border sticky top-0 bg-background/80 backdrop-blur-sm z-40"
   >
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold">POY</h1>
+      <h1 class="text-2xl font-bold font-heading">Jhon Paul</h1>
 
       <!-- Custom Theme Toggle Switch -->
       <label class="relative inline-flex items-center cursor-pointer">

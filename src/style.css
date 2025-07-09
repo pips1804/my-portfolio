@@ -39,3 +39,7 @@
     --bubble-bot: 220, 14%, 20%;
   }
 }
+
+body {
+  @apply font-sans;
+}

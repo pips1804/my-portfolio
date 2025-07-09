@@ -1,33 +1,47 @@
 <template>
   <div class="min-h-screen transition-colors duration-300">
     <div class="bg-background text-foreground min-h-screen">
-      <!-- Header -->
-      <Header @toggle-theme="toggleTheme" :is-dark="isDark" />
-
       <!-- Main Content -->
-      <main class="container mx-auto px-4 py-8 max-w-4xl animate-fade-in">
+      <main class="container mx-auto px-4 py-8 max-w-4xl">
         <!-- Profile Section -->
-        <ProfileSection />
+        <div class="opacity-0 animate-fade-up" style="animation-delay: 0ms">
+          <ProfileSection @toggle-theme="toggleTheme" :is-dark="isDark" />
+        </div>
 
         <!-- About Section -->
-        <AboutSection />
-
-        <div class="grid md:grid-cols-2 gap-6">
-          <!-- Experience Section -->
-          <ExperienceSection />
-
-          <!-- Recent Projects Section -->
-          <ProjectsSection />
+        <div class="opacity-0 animate-fade-up" style="animation-delay: 200ms">
+          <AboutSection />
         </div>
-        <!-- Tech Stack Section -->
-        <TechStackSection />
 
+        <!-- Experience + Projects -->
         <div class="grid md:grid-cols-2 gap-6">
-          <!-- Beyond Coding Section -->
-          <BeyondCodingSection />
+          <div class="opacity-0 animate-fade-up" style="animation-delay: 400ms">
+            <ExperienceSection />
+          </div>
+          <div class="opacity-0 animate-fade-up" style="animation-delay: 600ms">
+            <ProjectsSection />
+          </div>
+        </div>
 
-          <!-- Connect Section -->
-          <ConnectSection />
+        <!-- Tech Stack -->
+        <div class="opacity-0 animate-fade-up" style="animation-delay: 800ms">
+          <TechStackSection />
+        </div>
+
+        <!-- Beyond Coding + Connect -->
+        <div class="grid md:grid-cols-2 gap-6">
+          <div
+            class="opacity-0 animate-fade-up"
+            style="animation-delay: 1000ms"
+          >
+            <BeyondCodingSection />
+          </div>
+          <div
+            class="opacity-0 animate-fade-up"
+            style="animation-delay: 1200ms"
+          >
+            <ConnectSection />
+          </div>
         </div>
       </main>
 

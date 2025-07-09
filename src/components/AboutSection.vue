@@ -1,11 +1,14 @@
 <template>
   <section class="mb-12 animate-slide-up animate-fade-in">
-    <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-      <User class="h-6 w-6" />
+    <h2
+      class="text-2xl sm:text-2xl md:text-2xl font-bold mb-4 flex items-center gap-2"
+    >
+      <User class="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7" />
       About
     </h2>
+
     <div
-      class="bg-card text-card-foreground p-6 rounded-lg border border-border hover:shadow-lg transition-shadow"
+      class="bg-card text-card-foreground p-4 sm:p-6 rounded-lg border border-border hover:shadow-lg transition-shadow text-sm sm:text-base md:text-md leading-relaxed"
     >
       <p class="mb-4">
         I am a 21-year-old aspiring developer currently pursuing a Bachelor of

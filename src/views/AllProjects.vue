@@ -32,7 +32,8 @@
         <div
           v-for="project in projects"
           :key="project.id"
-          class="bg-card text-card-foreground p-6 rounded-lg border border-border hover:shadow-lg transition-shadow"
+          class="bg-card text-card-foreground p-6 rounded-lg border border-border hover:shadow-lg transition-shadow opacity-0 animate-fade-up"
+          :class="`delay-[${index * 200}ms]`"
         >
           <h3 class="text-lg font-semibold mb-2">{{ project.title }}</h3>
           <p class="text-muted-foreground text-sm mb-3">
