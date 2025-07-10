@@ -86,24 +86,28 @@ const projects = ref([
   {
     id: 1,
     title: "Amazon Clone",
+    description:
+      "A fully working Amazon clone website built using HTML, CSS, and JavaScript.",
     technologies: ["Javascript", "HTML", "CSS"],
-    demoUrl: "#",
-    codeUrl: "#",
+    demoUrl: "https://perso-proj-amazon-clone.netlify.app/",
+    codeUrl: "https://github.com/pips1804/javascript-amazon-project-main",
   },
   {
     id: 2,
+    title: "Latenue.ave",
+    description:
+      "A catalog site for online clothing shop Latenue.ave, built with Vue.js and Tailwind CSS.",
+    technologies: ["Vue.JS", "Tailwind CSS"],
+    demoUrl: "https://latenueave.netlify.app/",
+    codeUrl: "https://github.com/pips1804/LatenueaveProductShowcase",
+  },
+  {
+    id: 3,
     title: "BINI Inspired",
     description:
       "A BINI-inspired clone website built using HTML, CSS, and JavaScript.",
     technologies: ["HTML", "CSS", "Javascript"],
-    demoUrl: "#",
-    codeUrl: "#",
-  },
-  {
-    id: 3,
-    title: "AI Chat Bot",
-    technologies: ["Vue.js", "Bootstrap", "Gemini API"],
-    demoUrl: "#",
+    demoUrl: "https://perso-proj-bini-site-clone.netlify.app/",
     codeUrl: "#",
   },
 ]);

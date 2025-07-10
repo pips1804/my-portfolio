@@ -110,25 +110,25 @@ const projects = ref([
     description:
       "A fully working Amazon clone website built using HTML, CSS, and JavaScript.",
     technologies: ["Javascript", "HTML", "CSS"],
-    demoUrl: "#",
-    codeUrl: "#",
+    demoUrl: "https://perso-proj-amazon-clone.netlify.app/",
+    codeUrl: "https://github.com/pips1804/javascript-amazon-project-main",
   },
   {
     id: 2,
+    title: "Latenue.ave",
+    description:
+      "A catalog site for online clothing shop Latenue.ave, built with Vue.js and Tailwind CSS.",
+    technologies: ["Vue.JS", "Tailwind CSS"],
+    demoUrl: "https://latenueave.netlify.app/",
+    codeUrl: "https://github.com/pips1804/LatenueaveProductShowcase",
+  },
+  {
+    id: 3,
     title: "BINI Inspired",
     description:
       "A BINI-inspired clone website built using HTML, CSS, and JavaScript.",
     technologies: ["HTML", "CSS", "Javascript"],
-    demoUrl: "#",
-    codeUrl: "#",
-  },
-  {
-    id: 3,
-    title: "AI Chat Bot",
-    description:
-      "AI chatbot built with Vue.js and Bootstrap, integrated with the Gemini API for real-time conversational responses.",
-    technologies: ["Vue.js", "Bootstrap", "Gemini API"],
-    demoUrl: "#",
+    demoUrl: "https://perso-proj-bini-site-clone.netlify.app/",
     codeUrl: "#",
   },
   {
@@ -137,8 +137,8 @@ const projects = ref([
     description:
       "Responsive portfolio with dark mode, animations, and chat functionality.",
     technologies: ["Vue.js", "Tailwind CSS"],
-    demoUrl: "#",
-    codeUrl: "#",
+    demoUrl: "https://jhonpaulgm.netlify.app/",
+    codeUrl: "https://github.com/pips1804/my-portfolio",
   },
   {
     id: 5,
@@ -147,7 +147,7 @@ const projects = ref([
       "Our capstone project is an e-learning application for Android, built using Unity.",
     technologies: ["Unity", "C#"],
     demoUrl: "#",
-    codeUrl: "#",
+    codeUrl: "https://github.com/pips1804/eLearnMo",
   },
   {
     id: 6,
@@ -155,6 +155,15 @@ const projects = ref([
     description:
       "A simple photo booth web app using HTML, CSS, and JavaScript with snapshot and filter features.",
     technologies: ["HTML", "CSS", "JavaScript"],
+    demoUrl: "https://s2diopeepz.netlify.app/",
+    codeUrl: "#",
+  },
+  {
+    id: 7,
+    title: "AI Chat Bot",
+    description:
+      "AI chatbot built with Vue.js and Bootstrap, integrated with the Gemini API for real-time conversational responses.",
+    technologies: ["Vue.js", "Bootstrap", "Gemini API"],
     demoUrl: "#",
     codeUrl: "#",
   },
