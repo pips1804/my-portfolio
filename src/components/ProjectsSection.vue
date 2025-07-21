@@ -103,12 +103,12 @@ const projects = ref([
   },
   {
     id: 3,
-    title: "BINI Inspired",
+    title: "Stop Crammin'",
     description:
-      "A BINI-inspired clone website built using HTML, CSS, and JavaScript.",
-    technologies: ["HTML", "CSS", "Javascript"],
-    demoUrl: "https://perso-proj-bini-site-clone.netlify.app/",
-    codeUrl: "#",
+      "A fullstack project - task scheduler with kanban board built using Vue.js, Tailwind CSS, and Firebase Firestore.",
+    technologies: ["Vue.js", "Tailwind CSS", "Firebase"],
+    demoUrl: "https://stopcrammin.netlify.app/",
+    codeUrl: "https://github.com/pips1804/task-scheduler",
   },
 ]);
 

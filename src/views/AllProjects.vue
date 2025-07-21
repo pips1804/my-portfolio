@@ -124,6 +124,15 @@ const projects = ref([
   },
   {
     id: 3,
+    title: "Stop Crammin'",
+    description:
+      "A fullstack project - task scheduler with kanban board built using Vue.js, Tailwind CSS, and Firebase Firestore.",
+    technologies: ["Vue.js", "Tailwind CSS", "Firebase"],
+    demoUrl: "https://stopcrammin.netlify.app/",
+    codeUrl: "https://github.com/pips1804/task-scheduler",
+  },
+  {
+    id: 4,
     title: "BINI Inspired",
     description:
       "A BINI-inspired clone website built using HTML, CSS, and JavaScript.",
@@ -132,7 +141,7 @@ const projects = ref([
     codeUrl: "#",
   },
   {
-    id: 4,
+    id: 5,
     title: "Portfolio Website",
     description:
       "Responsive portfolio with dark mode, animations, and chat functionality.",
@@ -141,7 +150,7 @@ const projects = ref([
     codeUrl: "https://github.com/pips1804/my-portfolio",
   },
   {
-    id: 5,
+    id: 6,
     title: "ThinkSci",
     description:
       "Our capstone project is an e-learning application for Android, built using Unity.",
@@ -150,21 +159,12 @@ const projects = ref([
     codeUrl: "https://github.com/pips1804/eLearnMo",
   },
   {
-    id: 6,
+    id: 7,
     title: "s2diopeepz",
     description:
       "A simple photo booth web app using HTML, CSS, and JavaScript with snapshot and filter features.",
     technologies: ["HTML", "CSS", "JavaScript"],
     demoUrl: "https://s2diopeepz.netlify.app/",
-    codeUrl: "#",
-  },
-  {
-    id: 7,
-    title: "AI Chat Bot",
-    description:
-      "AI chatbot built with Vue.js and Bootstrap, integrated with the Gemini API for real-time conversational responses.",
-    technologies: ["Vue.js", "Bootstrap", "Gemini API"],
-    demoUrl: "#",
     codeUrl: "#",
   },
 ]);
