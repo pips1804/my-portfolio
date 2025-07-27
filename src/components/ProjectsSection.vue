@@ -96,7 +96,7 @@ const projects = ref([
     id: 2,
     title: "Latenue.ave",
     description:
-      "A catalog site for online clothing shop Latenue.ave, built with Vue.js and Tailwind CSS.",
+      "A catalog site for online clothing shop Latenue.ave, built with Vue.JS and Tailwind CSS.",
     technologies: ["Vue.JS", "Tailwind CSS"],
     demoUrl: "https://latenueave.netlify.app/",
     codeUrl: "https://github.com/pips1804/LatenueaveProductShowcase",
@@ -105,8 +105,8 @@ const projects = ref([
     id: 3,
     title: "Stop Crammin'",
     description:
-      "A fullstack project - task scheduler with kanban board built using Vue.js, Tailwind CSS, and Firebase Firestore.",
-    technologies: ["Vue.js", "Tailwind CSS", "Firebase"],
+      "A fullstack project - task scheduler with kanban board built using Vue.JS, Tailwind CSS, and Firebase Firestore.",
+    technologies: ["Vue.JS", "Tailwind CSS", "Firebase"],
     demoUrl: "https://stopcrammin.netlify.app/",
     codeUrl: "https://github.com/pips1804/task-scheduler",
   },
