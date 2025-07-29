@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed bottom-6 right-6 z-50 sm:bottom-4 sm:right-4">
+  <div class="fixed bottom-4 right-3 z-50 sm:left-auto sm:right-4 sm:bottom-4">
     <transition
       enter-active-class="transition transform duration-300 ease-out"
       enter-from-class="opacity-0 translate-y-4"
@@ -10,7 +10,7 @@
     >
       <div
         v-if="isChatOpen"
-        class="bg-card text-card-foreground border border-border rounded-xl shadow-xl w-96 h-[28rem] mb-4 flex flex-col"
+        class="bg-card text-card-foreground border border-border rounded-xl shadow-xl w-full max-w-md h-[28rem] mx-auto sm:mx-0 mb-4 flex flex-col"
       >
         <!-- Chat Header -->
         <div class="p-4 border-b border-border">
@@ -27,10 +27,8 @@
                   >Jhon Paul</span
                 >
 
-                <!-- Online + Gemini aligned in a row -->
-                <!-- Inside the profile text block -->
+                <!-- Online Status + Attribution -->
                 <div class="flex items-center gap-2 mt-1">
-                  <!-- Online Status -->
                   <div
                     class="flex items-center gap-1 text-xs text-green-500 leading-none"
                   >
@@ -38,9 +36,8 @@
                     <span>Online</span>
                   </div>
 
-                  <!-- Gemini Attribution -->
                   <span
-                    class="text-xs text-muted-foreground leading-none opacity-80"
+                    class="text-xs text-muted-foreground opacity-80 leading-none"
                   >
                     Powered by Google Gemini
                   </span>
@@ -48,14 +45,27 @@
               </div>
             </div>
 
-            <!-- Close Button -->
-            <button
-              @click="toggleChat"
-              class="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="Close chat"
-            >
-              <X class="h-4 w-4" />
-            </button>
+            <!-- Right Side Buttons -->
+            <div class="flex items-center gap-2">
+              <!-- Change Language -->
+              <button
+                @click="insertLanguageSelector"
+                class="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground transition-colors"
+                title="Change Language"
+              >
+                <Globe class="w-4 h-4" />
+                <span>Change</span>
+              </button>
+
+              <!-- Close Chat -->
+              <button
+                @click="toggleChat"
+                class="text-muted-foreground hover:text-foreground transition-colors"
+                aria-label="Close chat"
+              >
+                <X class="h-4 w-4" />
+              </button>
+            </div>
           </div>
         </div>
 
@@ -71,19 +81,20 @@
             :class="message.isUser ? 'items-end' : 'items-start'"
           >
             <!-- Show profile name and image above bot messages -->
-            <template v-if="!message.isUser">
+            <template v-if="!message.isUser && !message.isLanguageSelector">
               <div class="flex items-center gap-2 mb-1">
                 <img
                   src="../img/profile.jpg"
                   alt="Jhon Paul"
                   class="w-6 h-6 rounded-full object-cover"
                 />
-                <span class="text-xs font-medium text-muted-foreground"
-                  >Jhon Paul</span
-                >
+                <span class="text-xs font-medium text-muted-foreground">
+                  Jhon Paul
+                </span>
               </div>
             </template>
 
+            <!-- Message bubble -->
             <div
               class="max-w-xs px-3 py-2 rounded-lg bubble"
               :class="[
@@ -92,7 +103,37 @@
                   : 'bot bg-bubble-bot text-secondary-foreground',
               ]"
             >
-              <p class="text-sm whitespace-pre-wrap">{{ message.text }}</p>
+              <!-- Check if this is a language selector message -->
+              <template v-if="message.isLanguageSelector">
+                <p
+                  class="text-sm whitespace-pre-wrap"
+                  v-html="renderMarkdown(message.text)"
+                ></p>
+                <div class="flex gap-2 mt-2">
+                  <button
+                    class="bg-blue-500 text-white px-3 py-1 text-sm rounded-lg shadow hover:bg-blue-600 transition duration-200"
+                    @click="handleLanguageSelection('eng')"
+                  >
+                    English
+                  </button>
+                  <button
+                    class="bg-green-500 text-white px-3 py-1 text-sm rounded-lg shadow hover:bg-green-600 transition duration-200"
+                    @click="handleLanguageSelection('fil')"
+                  >
+                    Filipino
+                  </button>
+                </div>
+              </template>
+
+              <!-- Normal message text -->
+              <template v-else>
+                <p
+                  class="text-sm whitespace-pre-wrap"
+                  v-html="renderMarkdown(message.text)"
+                ></p>
+              </template>
+
+              <!-- Timestamp -->
               <p
                 class="text-[11px] mt-1 opacity-60"
                 :class="message.isUser ? 'text-right' : 'text-left'"
@@ -132,6 +173,7 @@
               placeholder="Type a message..."
               class="flex-1 px-3 py-2 bg-background border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
               aria-label="Type a message"
+              :disabled="!selectedLanguage"
             />
             <button
               @click="sendMessage"
@@ -148,8 +190,8 @@
     <!-- Toggle Button -->
     <button
       @click="toggleChat"
-      class="bg-primary text-primary-foreground py-3 px-4 rounded-full shadow-lg hover:bg-primary/90 transition-all duration-300 flex items-center gap-2 overflow-hidden"
-      :style="{ width: isChatOpen ? '52px' : '150px' }"
+      class="bg-primary text-primary-foreground py-3 px-4 rounded-full shadow-lg hover:bg-primary/90 transition-all duration-300 flex items-center gap-1 overflow-hidden"
+      :style="{ width: isChatOpen ? '52px' : '192px' }"
       aria-label="Toggle Chat"
     >
       <MessageCircle class="h-5 w-5 shrink-0" />
@@ -157,7 +199,7 @@
         class="text-sm font-medium whitespace-nowrap transition-opacity duration-300"
         :class="isChatOpen ? 'opacity-0' : 'opacity-100'"
       >
-        Chat with Poy
+        Chat with Jhon Paul
       </span>
     </button>
   </div>
@@ -167,19 +209,23 @@
 import { ref, watch, nextTick } from "vue";
 import { MessageCircle, Send, X } from "lucide-vue-next";
 import { chatResponses } from "../utils/chatResponses";
+import { marked } from "marked";
 
 const isChatOpen = ref(false);
 const newMessage = ref("");
 const isTyping = ref(false);
 const inputRef = ref(null);
 const messagesContainer = ref(null);
+const selectedLanguage = ref(null); // 'en', 'fil', etc.
+const showLanguagePrompt = ref(true);
 
 const chatMessages = ref([
   {
-    id: 1,
-    text: "Hi! I'm Jhon Paul. Feel free to ask me anything about my skills, experience, or projects!",
+    id: Date.now(),
+    text: "Please select your preferred language:",
     isUser: false,
     timestamp: new Date(),
+    isLanguageSelector: true, // special flag to show buttons
   },
 ]);
 
@@ -210,7 +256,16 @@ const scrollToBottom = () => {
 const sendMessage = async () => {
   if (!newMessage.value.trim()) return;
 
-  const message = newMessage.value;
+  const message = newMessage.value.trim();
+
+  // 🆕 Handle /change-language command
+  if (message === "/change-language") {
+    insertLanguageSelector();
+    newMessage.value = "";
+    return;
+  }
+
+  // Normal user message
   chatMessages.value.push({
     id: Date.now(),
     text: message,
@@ -223,7 +278,10 @@ const sendMessage = async () => {
   isTyping.value = true;
 
   setTimeout(async () => {
-    const response = await chatResponses.getResponse(message);
+    const response = await chatResponses.getResponse(
+      message,
+      selectedLanguage.value
+    );
     chatMessages.value.push({
       id: Date.now(),
       text: response,
@@ -233,6 +291,42 @@ const sendMessage = async () => {
     isTyping.value = false;
     scrollToBottom();
   }, 800 + Math.random() * 500);
+};
+
+const handleLanguageSelection = (lang) => {
+  selectedLanguage.value = lang;
+
+  // Remove language selector message
+  chatMessages.value = chatMessages.value.filter(
+    (msg) => !msg.isLanguageSelector
+  );
+
+  // Add greeting in chosen language
+  chatMessages.value.push({
+    id: Date.now(),
+    text:
+      lang === "fil"
+        ? "Hi! Ako si Jhon Paul. Huwag kang mahiyang magtanong tungkol sa aking skills, karanasan, o mga proyekto!"
+        : "Hi! I'm Jhon Paul. Feel free to ask me anything about my skills, experience, or projects!",
+    isUser: false,
+    timestamp: new Date(),
+  });
+};
+
+const insertLanguageSelector = () => {
+  chatMessages.value.push({
+    id: Date.now(),
+    text: "You can change the language. Please choose:",
+    isUser: false,
+    timestamp: new Date(),
+    isLanguageSelector: true,
+  });
+
+  scrollToBottom();
+};
+
+const renderMarkdown = (text) => {
+  return marked.parseInline(text || "").replace(/\n/g, "<br>");
 };
 </script>
 

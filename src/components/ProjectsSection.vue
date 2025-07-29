@@ -85,12 +85,12 @@ const showAll = ref(false);
 const projects = ref([
   {
     id: 1,
-    title: "Amazon Clone",
+    title: "Stop Crammin'",
     description:
-      "A fully working Amazon clone website built using HTML, CSS, and JavaScript.",
-    technologies: ["Javascript", "HTML", "CSS"],
-    demoUrl: "https://perso-proj-amazon-clone.netlify.app/",
-    codeUrl: "https://github.com/pips1804/javascript-amazon-project-main",
+      "A fullstack project - task scheduler with kanban board built using Vue.JS, Tailwind CSS, and Firebase Firestore.",
+    technologies: ["Vue.JS", "Tailwind CSS", "Firebase"],
+    demoUrl: "https://stopcrammin.netlify.app/",
+    codeUrl: "https://github.com/pips1804/task-scheduler",
   },
   {
     id: 2,
@@ -102,13 +102,13 @@ const projects = ref([
     codeUrl: "https://github.com/pips1804/LatenueaveProductShowcase",
   },
   {
-    id: 3,
-    title: "Stop Crammin'",
+    id: 2,
+    title: "Amazon Clone",
     description:
-      "A fullstack project - task scheduler with kanban board built using Vue.JS, Tailwind CSS, and Firebase Firestore.",
-    technologies: ["Vue.JS", "Tailwind CSS", "Firebase"],
-    demoUrl: "https://stopcrammin.netlify.app/",
-    codeUrl: "https://github.com/pips1804/task-scheduler",
+      "A fully working Amazon clone website built using HTML, CSS, and JavaScript.",
+    technologies: ["Javascript", "HTML", "CSS"],
+    demoUrl: "https://perso-proj-amazon-clone.netlify.app/",
+    codeUrl: "https://github.com/pips1804/javascript-amazon-project-main",
   },
 ]);
 

@@ -29,7 +29,7 @@ His girlfriend is Arah Grace, who he loves for being beautiful, smart, kind, and
 `;
 
 export const chatResponses = {
-  async getResponse(userMessage) {
+  async getResponse(userMessage, language = "en") {
     const message = userMessage.toLowerCase();
 
     const match = (keywords) =>
@@ -192,6 +192,11 @@ export const chatResponses = {
     }
 
     // Build a prompt if message fits any keyword group
+    const langInstructions = {
+      en: "Answer in English.",
+      fil: "Sagutin sa wikang Filipino.",
+    };
+
     const prompt = `
 You are Jhon Paul, a 4th-year IT student from Bulacan. Here's your profile:
 
@@ -199,6 +204,8 @@ ${userInfo}
 
 Now, answer the following message **as yourself** in a personal, first-person, friendly tone:
 "${userMessage}"
+
+${langInstructions[language] || ""}
 
 Keep your answer short and natural — like you're chatting with a visitor to your portfolio.
 `;
