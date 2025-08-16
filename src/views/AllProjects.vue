@@ -155,7 +155,7 @@ const projects = ref([
     description:
       "Our capstone project is an e-learning application for Android, built using Unity.",
     technologies: ["Unity", "C#"],
-    demoUrl: "#",
+    demoUrl: "https://thinksci.netlify.app/",
     codeUrl: "https://github.com/pips1804/eLearnMo",
   },
   {
